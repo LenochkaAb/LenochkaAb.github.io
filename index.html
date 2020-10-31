@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency exchange</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>Курс валют</h1>
+    <table>
+        <tr>
+            <td></td>
+            <th>Покупка</th>
+            <th>Продажа</th>
+        </tr>
+        <tr class="Usd">
+            <th>USD</th>
+            <td id="usdBuy"></td>
+            <td id="usdSale"></td>
+        </tr>
+        <tr class="Euro">
+            <th>EURO</th>
+            <td id="euroBuy"></td>
+            <td id="euroSale"></td>
+        </tr>
+        <tr class="Rub">
+            <th>RUB</th>
+            <td id="rubBuy"></td>
+            <td id="rubSale"></td>
+        </tr>
+    </table>
+    <div class="ExchangeCurrency">
+        <select id="mySelect">
+        <option>USD</option>
+        <option>EURO</option>
+        <option>RUB</option>
+        </select>
+        <input type="text" id="input-value">
+        <button id="btnBuy">Купить</button>
+        <button id="btnSale">Продать</button>
+        <div id="result"></div>
+    </div>
+    <script src="main.js"></script>
+</body>
+
+</html>

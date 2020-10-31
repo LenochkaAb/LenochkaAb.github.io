@@ -56,3 +56,4 @@ resultSale = (sel, val) => {
             break;
     }
     document.getElementById('result').innerHTML = `Ваша сумма: ${result} грн`;
+}

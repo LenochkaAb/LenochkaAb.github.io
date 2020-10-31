@@ -13,14 +13,19 @@ let rubSale = 0.386;
 document.getElementById('rubBuy').innerText = rubBuy;
 document.getElementById('rubSale').innerText = rubSale;
 
+const mySelect = document.getElementById('mySelect');
+const inputValue = document.getElementById('input-value');
 
+mySelect.addEventListener('change', () => {
+    inputValue.value = '';
+});
 
 btnBuy.onclick = () => {
-    const n = document.getElementById('mySelect').options.selectedIndex;
-    const sel = document.getElementById('mySelect').options[n].text;
-    const val = document.getElementById('input-value').value;
-    resultBuy(sel, val);
+    const selectedIndex = mySelect.options.selectedIndex;
+    const selectedOption = mySelect.options[selectedIndex].text;
+    resultBuy(selectedOption, inputValue.value);
 }
+
 resultBuy = (sel, val) => {
     let result;
     switch (sel) {
@@ -36,12 +41,14 @@ resultBuy = (sel, val) => {
     }
     document.getElementById('result').innerHTML = `Ваша сумма: ${result} грн`;
 }
+
 btnSale.onclick = () => {
     const n = document.getElementById('mySelect').options.selectedIndex;
     const sel = document.getElementById('mySelect').options[n].text;
     const val = document.getElementById('input-value').value;
     resultSale(sel, val);
 }
+
 resultSale = (sel, val) => {
     let result;
     switch (sel) {

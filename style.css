@@ -1,0 +1,63 @@
+  h1 {
+        text-align: center;
+        color: rebeccapurple;
+    }
+    
+    table {
+        margin: 0 auto;
+        width: 30%;
+        font-size: 25px;
+        background-color: wheat;
+        padding-bottom: 25px;
+        padding-top: 20px;
+    }
+    
+    th,
+    td {
+        padding-top: 10px;
+    }
+    
+    .Usd {
+        text-align: center;
+        color: dodgerblue;
+    }
+    
+    .Euro {
+        text-align: center;
+        color: green;
+    }
+    
+    .Rub {
+        text-align: center;
+        color: mediumvioletred;
+    }
+    
+    .ExchangeCurrency {
+        text-align: center;
+        padding-top: 10px;
+    }
+    
+    #mySelect {
+        height: 30px;
+        color: rebeccapurple;
+        font-weight: bold;
+    }
+    
+    #input-value {
+        height: 24px;
+    }
+    
+    #btnBuy,
+    #btnSale {
+        height: 30px;
+        width: 80px;
+        color: rebeccapurple;
+        font-weight: bold;
+    }
+    
+    #result {
+        margin-top: 10px;
+        color: rebeccapurple;
+        font-size: 20px;
+        font-weight: bold;
+    }

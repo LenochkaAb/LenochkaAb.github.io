@@ -15,11 +15,11 @@ document.getElementById('rubSale').innerText = rubSale;
 
 const mySelect = document.getElementById('mySelect');
 const input = document.getElementById('input-value');
-const result = document.getElementById('result');
+
 
 mySelect.addEventListener('change', () => {
     input.value = '';
-    result.value = '';
+
 });
 
 btnBuy.addEventListener('click', () => {

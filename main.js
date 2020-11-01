@@ -19,7 +19,7 @@ const result = document.getElementById('result');
 
 mySelect.addEventListener('change', () => {
     input.value = '';
-    result = '';
+    result.value = '';
 });
 
 btnBuy.addEventListener('click', () => {

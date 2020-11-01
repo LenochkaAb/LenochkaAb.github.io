@@ -1,66 +1,71 @@
-let usdBuy = 33.15;
-let usdSale = 28.49
+const usdBuy = 33.15;
+const usdSale = 28.49
 document.getElementById('usdBuy').innerText = usdBuy;
 document.getElementById('usdSale').innerText = usdSale;
 
-let euroBuy = 28.10;
-let euroSale = 33.65;
+const euroBuy = 28.10;
+const euroSale = 33.65;
 document.getElementById('euroBuy').innerText = euroBuy.toFixed(2);
 document.getElementById('euroSale').innerText = euroSale;
 
-let rubBuy = 0.357;
-let rubSale = 0.386;
+const rubBuy = 0.357;
+const rubSale = 0.386;
 document.getElementById('rubBuy').innerText = rubBuy;
 document.getElementById('rubSale').innerText = rubSale;
 
 const mySelect = document.getElementById('mySelect');
-const inputValue = document.getElementById('input-value');
+const input = document.getElementById('input-value');
+const result = document.getElementById('result');
 
 mySelect.addEventListener('change', () => {
-    inputValue.value = '';
+    input.value = '';
+    result = '';
 });
 
-btnBuy.onclick = () => {
+btnBuy.addEventListener('click', () => {
     const selectedIndex = mySelect.options.selectedIndex;
     const selectedOption = mySelect.options[selectedIndex].text;
-    resultBuy(selectedOption, inputValue.value);
-}
+    resultBuy(selectedOption, input.value);
+});
 
-resultBuy = (sel, val) => {
+btnSale.addEventListener('click', () => {
+    const selectedIndex = mySelect.options.selectedIndex;
+    const selectedOption = mySelect.options[selectedIndex].text;
+    resultSale(selectedOption, input.value);
+});
+
+function resultBuy(selectedCurrency, value) {
     let result;
-    switch (sel) {
+    switch (selectedCurrency) {
         case "USD":
-            result = (val * usdBuy).toFixed(2);
+            result = (value * usdBuy).toFixed(2);
             break;
         case "EURO":
-            result = (val * euroBuy).toFixed(2);
+            result = (value * euroBuy).toFixed(2);
             break;
         case "RUB":
-            result = (val * rubBuy).toFixed(2);
+            result = (value * rubBuy).toFixed(2);
             break;
     }
-    document.getElementById('result').innerHTML = `Ваша сумма: ${result} грн`;
-}
+    setSum(result);
+};
 
-btnSale.onclick = () => {
-    const n = document.getElementById('mySelect').options.selectedIndex;
-    const sel = document.getElementById('mySelect').options[n].text;
-    const val = document.getElementById('input-value').value;
-    resultSale(sel, val);
-}
-
-resultSale = (sel, val) => {
+function resultSale(selectedCurrency, value) {
     let result;
-    switch (sel) {
+    switch (selectedCurrency) {
         case "USD":
-            result = (val * usdSale).toFixed(2);
+            result = (value * usdSale).toFixed(2);
             break;
         case "EURO":
-            result = (val * euroSale).toFixed(2);
+            result = (value * euroSale).toFixed(2);
             break;
         case "RUB":
-            result = (val * rubSale).toFixed(2);
+            result = (value * rubSale).toFixed(2);
             break;
     }
+    setSum(result);
+}
+
+function setSum(result) {
     document.getElementById('result').innerHTML = `Ваша сумма: ${result} грн`;
 }
